@@ -9,3 +9,4 @@ temp/
 /var
 ./.env
 ./.env.test
+.env
