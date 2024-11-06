@@ -1,10 +1,15 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+import {
+  Column,
+  CreateDateColumn,
+  Entity,
+  PrimaryGeneratedColumn,
+  UpdateDateColumn,
+} from "typeorm";
 
 @Entity()
 export class User {
   @PrimaryGeneratedColumn("uuid")
   uid!: string;
-
 
   @Column("varchar", {
     length: 100,
@@ -25,7 +30,6 @@ export class User {
 
   @Column("varchar", {
     length: 255,
-    unique: true,
   })
   password!: string;
 
@@ -36,7 +40,7 @@ export class User {
   created_at!: Date;
 
   @UpdateDateColumn({
-    type: "time without time zone",
+    type: "timestamp without time zone",
     default: () => "CURRENT_TIMESTAMP",
   })
   updated_at!: Date;

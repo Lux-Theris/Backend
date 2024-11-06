@@ -8,7 +8,7 @@ export async function createUser(appDataSource: DataSource) {
   const salt = await bcrypt.genSalt(10);
   const hashed_password = await bcrypt.hash("Pecege@1", salt);
 
-  userData.uid = "af702b78-db96-40a3-a659-fdc43be2d257";
+  userData.uid = "55918137-2ef4-4967-9405-66c9da7144ef";
   userData.full_name = "admin";
   userData.email = "admin@teste.com";
   userData.document = "12312312312";
@@ -19,7 +19,7 @@ export async function createUser(appDataSource: DataSource) {
     uid: userData.uid,
   });
 
-  if (userExist.length === 0) {
+  if (!userExist) {
     await appDataSource.manager.save(userData);
 
     console.log("create user with success!");

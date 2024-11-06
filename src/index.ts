@@ -7,15 +7,13 @@ export async function initServer() {
   try {
     const dataSource = await appDataSource.initialize();
 
-    await app.listen({ port: env.PORT });
-
     await createUser(dataSource);
 
-    console.log(
-      `Iniciado o banco de dados na seguinte página http://localhost:${env.PORT}`
-    );
-  } catch (error) {
-    app.log.error("error:", error);
+    console.log("Data Source has been initialized!");
+
+    await app.listen({ port: env.PORT });
+  } catch (err) {
+    app.log.error(err);
     process.exit(1);
   }
 }

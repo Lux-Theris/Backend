@@ -1,4 +1,5 @@
 import { FastifyReply, FastifyRequest } from "fastify";
+import { authService } from "../../services/auth/authService";
 import { loginValidation } from "./validations/authValidation";
 
 class AuthController {

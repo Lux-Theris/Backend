@@ -4,9 +4,9 @@ import { authController } from "../../controllers/auth/authController";
 export function authPublicRoutes(app: FastifyInstance) {
   app.get("/", async (request, reply) => {
     reply.code(200).send({
-      hello: "mundo",
+      hello: "world",
     });
   });
 
-  app.post("/login", authController.login)
+  app.post("/login", authController.login);
 }
