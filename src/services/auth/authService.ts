@@ -12,7 +12,7 @@ interface LoginPayload {
   password: string;
 }
 
-export class AuthService {
+class AuthService {
   async login({ email, password }: LoginPayload) {
     const user = await appDataSource.manager.findOne(User, {
       where: { email },
