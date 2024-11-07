@@ -1,6 +1,7 @@
 import fastify from "fastify";
 import { errorHandler } from "./middlewares/errorMidleware";
 import { authPublicRoutes } from "./routes/auth/authPublicRoutes";
+import { socialProjectsPrivateRoutes } from "./routes/socialProjects/socialProjectsPrivateRoutes";
 
 export const app = fastify();
 
